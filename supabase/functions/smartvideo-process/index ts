@@ -1,0 +1,11 @@
+import { serve } from 'std/server'
+
+serve(async (req) => {
+  const { video } = await req.json();
+  // Dummy video AI process
+  return new Response(JSON.stringify({
+    status: 'success',
+    message: 'Video diproses AI!',
+    url: video,
+  }), { headers: { 'Content-Type': 'application/json' } });
+});
